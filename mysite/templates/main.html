@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homero Ochoa</title>
+    <link rel="icon" href="{% static 'assets/donut.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://kit.fontawesome.com/5525ce6ed7.js" crossorigin="anonymous"></script>
+    <!-- links -->
+</head>
+
+
+<body data-aos-easing="ease" data-aos-duration="1500" data-aos-delay="0">
+    <!-- <li><i class="uil uil-moon change-theme" id="theme-button"></i></li> -->
+    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid  navbur">
+
+            <div class="navi">
+                <div class="col-xl-9 d-flex align-items-center lefty">
+                    <a class="navbar-brand me-auto" href="#">
+                        <img src="{% static 'assets/donut.svg' %}" width="50" height="50" alt="">
+                    </a>
+
+                    <nav class="nav-menu d-none d-lg-block float-right">
+                        <ul>
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#work">My Work</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <div class="invert pl-4 " id="theme-button">
+                                <i class="fa-solid fa-circle-half-stroke" name="contrast-outline" style="color: rgb(83,157,152);"></i>
+                            </div>
+                          
+                        </ul>
+
+                    </nav>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="d-flex descript"  id="home">
+        <div class="container ">
+
+            <div class="small-container">
+                <div>
+                    <!--class="row" to split this container in two later-->
+                    <div class="description-header initial-0 aos-init " data-aos="zoom-in" data-aos-delay="200">
+                        <p id="hey">Yo! My name is</p>
+                        <h1 id="name">Homer[o] Ochoa. </h1>
+                        <h3> Engineer | Python Developer | Music Fanatic</h3>
+                        <p> <span id="big"></span>I'm an Engineer turned Web Developer with a focus on Python and Django</p>
+
+                        <div class="social">
+                            <a href="{{my_info.github}}"><i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="{{my_info.linkedin}}"><i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="button">
+                            <a class="main-button ml-2" href="{% static 'assets/homero_resume.pdf' %}" target="_blank" rel="noopener noreferrer"> <button id="btn2">Resume <i class="uil uil-import"></i></i>
+                            </button></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container2">
+
+            <div class="small-container2">
+                <div class="row2 initial-3">
+                    <div class="col-md-6 profile-pic aos-init" data-aos="fade-up-right" data-aos-delay="200">
+                        <img class="rounded-circle" src="{% static 'assets/homero_profile.jpg' %}" alt="">
+                    </div>
+                    <div class="col-md-6 initial-4">
+                        <div class="title aos-init" data-aos="zoom-in" data-aos-delay="200">
+                            <h1>About Me</h1>
+                        </div>
+                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">I'm an Engineer who discovered a passion for programming while working in the Aerospace industry and coding in my spare time. Since then I've commited to becoming a Web Developer for a living.</p>
+                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">My focus is in Python Backend Development using Django and the Django REST Framework. I'm passionate about backend developemnt that requires clean and maintainable code, API building, and some good old analytical problem solving. While unconvemntional to most, this is where I have the most fun, especially if I'm learning something new!</p>
+                        <p data-aos="zoom-in" data-aos-delay="200" class="aos-init">As an aside, I LOVE music. I always having something playing and never pass up the chance up to chat about music with other people. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <div class="work" id="work">
+        <div class="container work-container">
+            <div class="title2  aos-init" data-aos="zoom-in" data-aos-delay="200">
+                <h1>MY WORK</h1>
+            </div>
+
+            <div class="small-container">
+                <div class="row3 initial-0 aos-init" data-aos="zoom-in" data-aos-delay="200"> 
+                    <a href="https://github.com/homeroochoa47/ForTheRecord"><div class="col-md-6 card initial-6 w-">
+                        <img src="{%static 'assets/fortherecord.png'%}" alt="">
+                        <div class="card-body col-5-info px-3 py-3">
+                            <h3 class="pb-1">ForTheRecord</h3>
+                            <div class="row icon-row">
+                                <i class="col fa-brands fa-python"></i>
+                                <i class="col fa-brands fa-js"></i>
+                                <i class="col fa-brands fa-react"></i>
+                                <i class="col fa-brands fa-html5"></i>
+                                <i class="col fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col-md-6 project-description">
+                        <p>A full Stack web app that allows users to access comments for their currently playing music on Spotify. Song data is used to search for corresponding Youtube comments and presented to users along with relevant song information.</p>                     
+                    </div>
+                </div>
+
+                <div class="row3 initial-0  aos-init" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://github.com/homeroochoa47/Camera-Recommender"><div class="col-md-6 card initial-6 w-">
+                        <img src="{%static 'assets/camera_recommender.png'%}" alt="">
+                        <div class="card-body col-5-info px-3 py-3">
+                            <h3 class="pb-1">Camera Recommender</h3>
+                            <div class="row icon-row">
+                                <i class="col fa-brands fa-python"></i>
+                                <i class="col fa-brands fa-html5"></i>
+                                <i class="col fa-brands fa-css3-alt"></i>
+                            </div>
+                        </div></a>
+                    </div>
+                    <div class="col-md-6 project-description">
+                        <p>A site that recommends users a film camera based on their protography interests determined by their input.
+                        </p>                     
+                    </div>
+                </div>
+            </div>
+
+        </div>  
+        </div>
+    </div>
+
+
+
+    <footer id="contact">
+        <div class="container contact-container aos-init" data-aos="zoom-in" data-aos-delay="200">
+            <div class="title5">
+                <h1>CONTACT ME</h1>
+            </div>
+            <div class="contact-text d-flex">
+                <p>Looking to reach out? I'd love to hear from you whether its to discuss a job opportunity or just to say hello!</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="mailto:homeroochoa47@gmail.com"> <button>Contact <i class="uil uil-message" style=""></i>  </button></a>
+            </div>
+        </div>
+        <div class="footing aos-init" data-aos="zoom-in" data-aos-delay="200">
+            <div class="row justify-content-center ">
+                <div class="col-md-4 ">
+                    <p>Thanks for visiting!</p>
+                    <p>Built by Homero Ochoa</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="preloader"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
