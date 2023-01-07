@@ -7,6 +7,12 @@ services:
       dockerfile: Dockerfile.prod
     image: 973050924786.dkr.ecr.us-west-2.amazonaws.com/personal-server:personal-server
     command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "us-west-2"
+        awslogs-group: "Personal-Server"
+        awslogs-stream: "Docker-Stream"
     volumes:
       - static_volume:/home/app/django-server/staticfiles
     expose:
