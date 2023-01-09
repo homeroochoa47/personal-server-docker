@@ -1,19 +1,28 @@
-#base image
-FROM python:3.9-alpine3.13
+FROM python:3.8.3-alpine
 
-#set enironment variables
+ENV SERVER=/home/app/server
+#RUN adduser --disabled-password --no-create-home app
+# set work directory
+
+
+RUN mkdir -p $SERVER
+RUN mkdir -p $SERVER/staticfiles
+
+# where the code lives
+WORKDIR $SERVER
+
+# set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-#set the working directory within the container
-WORKDIR /django-server
-
-#copy the requirements.txt file to the workdir
-COPY ./requirements.txt requirements.txt
-
-#install app dependencies
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
-
-#copy from this directory to the workdir
-COPY . .
+# install psycopg2 dependencies
+RUN apk update \
+    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add postgresql-dev gcc python3-dev musl-dev \
+    && apk del build-deps \
+    && apk --no-cache add musl-dev linux-headers g++
+# install dependencies
+RUN pip install --upgrade pip
+# copy project
+COPY . $SERVER
+RUN pip install -r requirements.txt

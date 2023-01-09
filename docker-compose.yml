@@ -1,13 +1,26 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  personal-server:
-    build: .
-    volumes:
-      - .:/django-server
+  nginx:
+    build: ./nginx
     ports:
-      - 8000:8000
+      - 1300:80
+    volumes:
+      - static_volume:/home/app/server/static
+    depends_on:
+      - web
+    restart: "on-failure"
+  web:
+    build: . #build the image for the web service from the dockerfile in parent directory
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/app/server/static
     env_file:
-      - ./.env
-    container_name: server_container
-    command: python manage.py runserver 0.0.0.0:8000
+      - .env.staging
+    image: server
+    expose:
+      - 8000:8000
+    restart: "on-failure"
+
+volumes:
+  static_volume:
