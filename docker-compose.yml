@@ -3,24 +3,25 @@ version: '3.9'
 services:
   nginx:
     build: ./nginx
+    image: 973050924786.dkr.ecr.us-west-2.amazonaws.com/personal-server:nginx
     ports:
       - 1300:80
+      - 443:443 
     volumes:
       - static_volume:/home/app/server/static
     depends_on:
       - web
-    restart: "on-failure"
+    restart: always
   web:
     build: . #build the image for the web service from the dockerfile in parent directory
+    image: 973050924786.dkr.ecr.us-west-2.amazonaws.com/personal-server:web
     command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/server/static
     env_file:
       - .env.staging
-    image: server
     expose:
-      - 8000:8000
-    restart: "on-failure"
+      - 8000
 
 volumes:
   static_volume:
