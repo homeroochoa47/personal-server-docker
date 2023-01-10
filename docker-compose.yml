@@ -6,7 +6,6 @@ services:
     image: 973050924786.dkr.ecr.us-west-2.amazonaws.com/personal-server:nginx
     ports:
       - 1300:80
-      - 443:443 
     volumes:
       - static_volume:/home/app/server/static
     depends_on:
