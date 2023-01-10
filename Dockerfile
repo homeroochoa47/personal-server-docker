@@ -27,10 +27,10 @@ RUN apk update \
 # install dependencies
 RUN pip install --upgrade pip
 
-#copy entrypoint.prod.sh
+#copy entrypoint.sh
 COPY ./entrypoint.sh .
-RUN sed -i 's/\r$//g'  $SERVER/entrypoint.prod.sh
-RUN chmod +x  $SERVER/entrypoint.prod.sh
+RUN sed -i 's/\r$//g'  $SERVER/entrypoint.sh
+RUN chmod +x  $SERVER/entrypoint.sh
 
 # copy project
 COPY . $SERVER
