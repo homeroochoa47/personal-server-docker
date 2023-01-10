@@ -30,7 +30,7 @@ RUN pip install --upgrade pip
 #copy entrypoint.sh
 COPY ./entrypoint.sh .
 RUN sed -i 's/\r$//g'  $SERVER/entrypoint.sh
-RUN chmod +x $SERVER/entrypoint.sh
+RUN chmod u+x $SERVER/entrypoint.sh
 
 # copy project
 COPY . $SERVER
