@@ -25,4 +25,5 @@ RUN apk update \
 RUN pip install --upgrade pip
 # copy project
 COPY . $SERVER
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN pip install -r requirements.txt
