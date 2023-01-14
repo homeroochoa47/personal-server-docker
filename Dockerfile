@@ -34,6 +34,7 @@ RUN chmod +x $SERVER/entrypoint.sh
 
 # copy project
 COPY . $SERVER
+COPY static/assets $SERVER/static/assets
 RUN pip install -r requirements.txt
 
 #chown all files to the app user
